@@ -1,0 +1,14 @@
+snippet make
+	CC=${1:gcc}
+	LDFLAGS=$2
+	CFLAGS=${3:-Wall}
+	SRC=$4
+	OBJ=$(SRC:.c=.o)
+		BIN=${5:program}
+	all: $(SRC) $(BIN)
+	$(BIN): $(OBJ)
+		$(CC) $(LDFLAGS)  $(OBJ) -o $@
+	.c.o:
+		$(CC) -c $(CFLAGS) $< -o $@
+	launch:
+		./$(BIN)

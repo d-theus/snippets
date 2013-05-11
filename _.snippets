@@ -1,0 +1,21 @@
+# Global snippets
+
+# (c) holds no legal value ;)
+snippet c)
+	`&enc[:2] == "utf" ? "©" : "(c)"` Copyright `strftime("%Y")` ${1:`g:snips_author`}. All Rights Reserved.${2}
+snippet date
+	`strftime("%Y-%m-%d")`
+snippet makefile
+	CC=${1}
+	LDFLAGS=${2}
+	CFLAGS=${3:-Wall}
+	SRC=${4}
+	OBJ=$(SRC:.c=.o)
+		BIN=${5:program}
+	all: $(SRC) $(BIN)
+	$(BIN): $(OBJ)
+		$(CC) $(LDFLAGS)  $(OBJ) -o $@
+	.c.o:
+		$(CC) -c $(CFLAGS) $< -o $@
+	launch:
+		./$(BIN)

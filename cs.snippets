@@ -1,0 +1,24 @@
+snippet conf
+	if ( MessageBox.Show("Do you really want ${1:action}", "Confirmation", MessageBoxButtons.YesNo) == DialogResult.No ) return;
+snippet tc
+	try
+	{
+		${1:/*code*/}
+	}
+	catch ( Exception exc)
+	{
+		MessageBox.Show("An error occured when ${2:action}", "Error");
+	}
+snippet tcf
+	try
+	{
+		${1:/*code*/}
+	}
+	catch ( exception exc)
+	{
+		messagebox.show("an error occured when ${2:action}", "error");
+	}
+	finally
+	{
+		${3:/*fcode*/}
+	}
