@@ -73,10 +73,13 @@ snippet cha
 	% chapter $2 (end)
 # Section
 snippet sec
-	\section{${1:section name}} % (fold)
+	\section{${1:section name}}
 	\label{sec:${2:$1}}
 	${3}
 	% section $2 (end)
+snippet sec*
+	\section*{${1:section name}}
+
 # Sub Section
 snippet sub
 	\subsection{${1:subsection name}} % (fold)
@@ -122,3 +125,11 @@ snippet lam
 	\lambda
 snippet dots
 	$\ldots$
+
+snippet init
+	\documentclass[a4paper, 12pt]{report}
+	%pack{{{
+	\usepackage[utf8]{inputenc}
+	\usepackage[russian]{babel}
+	\usepackage{amsmath}
+	%}}}
