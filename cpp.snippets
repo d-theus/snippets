@@ -33,3 +33,9 @@ snippet mf
 	${1:type} ${2:Class}::${3:memname}(${4:args}){
 		$5
 	}
+
+snippet iter
+	for(std::vector<${1:type}>::iterator i = 
+			${2:cname}.begin(); i != $2.end(); i++){
+	}
+	
