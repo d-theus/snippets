@@ -33,8 +33,16 @@ snippet enum
 	\begin{enumerate}
 		\item ${1}
 	\end{enumerate}
+snippet переч
+	\begin{enumerate}
+		\item ${1}
+	\end{enumerate}
 # Itemize
 snippet item
+	\begin{itemize}
+		\item ${1}
+	\end{itemize}
+snippet пун
 	\begin{itemize}
 		\item ${1}
 	\end{itemize}
@@ -73,7 +81,12 @@ snippet cha
 	% chapter $2 (end)
 # Section
 snippet sec
-	%{{{ ---------- SECTION: $2 ---------
+	%{{{ ---------- SECTION: $1 ---------
+	\section{${1:section name}}
+	${3}
+	%}}}
+snippet раз
+	%{{{ ---------- SECTION: $1 ---------
 	\section{${1:section name}}
 	${3}
 	%}}}
@@ -82,12 +95,20 @@ snippet sec*
 
 # Sub Section
 snippet sub
-	%{{{ ---------- SUBSECTION: $2 ---------
+	%{{{ ---------- SUBSECTION: $1 ---------
+	\subsection{${1:subsection name}} % (fold)
+	${3}
+	%}}}
+snippet праз
+	%{{{ ---------- SUBSECTION: $1 ---------
 	\subsection{${1:subsection name}} % (fold)
 	${3}
 	%}}}
 # Sub Sub Section
 snippet subs
+	\subsubsection{${1:subsubsection name}} % (fold)
+	${3}
+snippet ппр
 	\subsubsection{${1:subsubsection name}} % (fold)
 	${3}
 # Paragraph
@@ -102,18 +123,10 @@ snippet subp
 	\label{subp:${2:$1}}
 	${3}
 	% subparagraph $2 (end)
+snippet it
+	\item ${1:item}
 snippet itd
 	\item[${1:description}] ${2:item}
-snippet figure
-	${1:Figure}~\ref{${2:fig:}}${3}
-snippet table
-	${1:Table}~\ref{${2:tab:}}${3}
-snippet listing
-	${1:Listing}~\ref{${2:list}}${3}
-snippet section
-	${1:Section}~\ref{${2:sec:}}${3}
-snippet page
-	${1:page}~\pageref{${2}}${3}
 snippet defn
 	\definition{${1:what}}{${2:what it is}}$3
 
@@ -125,13 +138,25 @@ snippet dots
 	$\ldots$
 
 snippet init
-	\documentclass[a4paper, 12pt]{report}
+	\documentclass[a4paper, 12pt]{article}
 	%pack{{{
 	\usepackage[utf8]{inputenc}
 	\usepackage[russian]{babel}
 	\usepackage{amsmath}
+	\usepackage{pdfpages}
+	\usepackage{graphicx}
+	\usepackage{listings}
 	%}}}
+	\begin{document}
+	\end{document}
 
 snippet bcomm
 	%%{{{--------${1:COMMENT}--------
 	%%}}}
+
+snippet figure
+	\begin{figure}
+		\includegraphics[]{${1:filename}}
+		\caption{${2:caption}}
+	\end{figure}
+
