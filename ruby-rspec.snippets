@@ -1,0 +1,52 @@
+snippet desc
+	describe ${1:test case} do
+	  ${2}
+	end
+snippet it
+	it "${1:what}" do
+	${2}
+	end
+snippet ext
+	expect(${1:object}).to ${2}
+snippet exnt
+	expect(${1:object}).not_to ${2}
+snippet eteq
+	expect(${1:object}).to eq(${2:value})
+snippet enteq
+	expect(${1:object}).not_to eq(${2:value})
+snippet etbt
+	expect(${1:object}).to be_true
+snippet etbf
+	expect(${1:object}).to be_false
+snippet etbn
+	expect(${1:object}).to be_nil
+snippet be numeric match
+	be ${1:rel} ${2:val}
+snippet be floating range inclusion
+	be_within(${1:radius}).of(${2:val})
+snippet ar start_with val
+	start_with ${1:val}
+snippet ar start_with arr
+	start_with [${1:arr}]
+snippet ar end_with val
+	end_with ${1:val}
+snippet ar end_with arr
+	end_with [${1:arr}]
+snippet inc
+	expect(${1:collection}).to include ${2:thing}
+snippet an be_a
+	be_a ${1:class}
+snippet an be_kind_of
+	be_kind_of ${1:class}
+snippet an be_inst_of
+	be_instance_of ${1:class}
+snippet ha
+	have(${1:n}).things
+snippet hal
+	have_at_least(${1:n}).things
+snippet ham
+	have_at_most(${1:n}).things
+snippet rt
+	respond_to(:${1})
+snippet etre
+	expect(${1:block}).to raise_error(${2:error})
